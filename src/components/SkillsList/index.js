@@ -22,7 +22,7 @@ function SkillsList() {
   const [isEditing, setEditing] = useState({ id: "", edit: false });
   const [imageUrl, setImageUrl] = useState("");
 
-  //POST
+  
   const handleTask = async () => {
     if (name == "" || version == "" || description == "" || imageUrl == "") {
       alert("Preencha todos os campos");
@@ -40,17 +40,12 @@ function SkillsList() {
     setTaskList([...taskList, data]);
     console.log(data);
 
-    //Devemos sempre atualizar o state com seu setState
-    //para evitar problemas de renderização
-    // tasks.push(newTask)
-
     setName("");
     setDescription("");
     setVersion("");
     setImageUrl("");
   };
 
-  //DELETE
   const deleteTask = async (id) => {
     try {
       const { data, status } = await apiSkills.delete(`/api/skills/${id}`);
@@ -65,7 +60,6 @@ function SkillsList() {
     }
   };
 
-  //GET
   const getTasks = async () => {
     setLoading(true);
     const { data } = await apiSkills.get("/api/skills");
@@ -73,7 +67,6 @@ function SkillsList() {
     setLoading(false);
   };
 
-  //UPDATE
   const updateTaskList = async () => {
     const newTask = {
       name: name,
@@ -103,10 +96,10 @@ function SkillsList() {
     setImageUrl("");
     setEditing({ id: "", edit: false });
   };
+
   useEffect(() => {
     getTasks();
   }, []);
-
   return (
     <div className="config-body">
       <Container className="bg-secondary">
@@ -130,7 +123,6 @@ function SkillsList() {
               onChange={(e) => setImageUrl(e.target.value)}
               value={imageUrl}
             />
- 
           </Form.Group>
           <Form.Select
             aria-label="Default select example"
