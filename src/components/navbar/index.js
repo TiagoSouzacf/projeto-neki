@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from 'react-router-dom';
+import React, { useContext} from "react";
 import { AuthContext } from "../../contexts/auth";
 import { AiOutlineLogout } from "react-icons/ai";
 
@@ -17,12 +16,10 @@ export const Navbar = () => {
       <div className="container-navbar">
         <div className="container-navbar-img">
           <img className="logo" src={Logo2} alt="Logo Neki" />
-        </div>        
+        </div>   
+         
         <ul className="container-navbar-list">
-          <li className="container-navbar-item">
-            <Link className="container-icone">
-              Skills
-            </Link>
+          <li className="container-navbar-item">            
           </li>
           <li className="container-navbar-item">
             <AiOutlineLogout className="container-icone" onClick={handleLogout}>

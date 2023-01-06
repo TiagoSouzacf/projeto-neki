@@ -1,26 +1,25 @@
-.container-config{
+.container-login{
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;    
-    background: #f2f2f2;
+    background: #ffffff;
 }
-.container-config img{  
+.container-login img{  
     padding: 30px;
     width: 400px;
 
 }
-.container-login{
+.container-login-config{
     width: 30%;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     display: block;
     background: #3d5b72;
-    overflow: hidden;
     padding: 10px 55px 33px;
     }
 
@@ -43,11 +42,16 @@
     gap: 10px;
     border: 0 none;
 }
+.form-input-container input{
+    width: 100%;
+  }
 
 .section{    
-    position: relative;    
+    position: relative;
+    width: 100%;
+    
 }
-.section input{
+.form-input-password{
     position: absolute;
     top: 0;
     left: 0;
@@ -77,7 +81,7 @@
     background-size: cover;
 }
 
-.form-input {
+.form-input-config {
     width: 90%;
     height: 40px;
     padding: 10px 20px;
@@ -85,6 +89,7 @@
     border: 0 none;
     background-color: #f2f2f2;
     border-radius: 10px;
+    outline: none;
 }
 .form-button-config{
     display: flex;
@@ -93,7 +98,7 @@
     align-items: center;
 }
 
-.form-button {    
+.form-button-bt {    
     margin-top: 20px;
     width: 140px;
     height: 40px;
@@ -110,7 +115,7 @@
     justify-content: center;
 }
 
-.form-button:hover{
+.form-button-bt:hover{
     background-color: #fff;
     color: #3d5b72;
 }
@@ -127,13 +132,13 @@
     padding: 20px 5px 5px;
 }
 
-.form-link {
+.form-link-lk {
     color: #fff;
     text-decoration: none; 
     font-size: 20px;
 }
 
-.form-link:hover{
+.form-link-lk:hover{
     color: #c8c3c3;
 }
 

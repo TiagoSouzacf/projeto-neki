@@ -1,4 +1,4 @@
-import React, { Children, useContext } from "react";
+import React, { children, useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../Pages/Login";
 import Cadastro from "../Pages/Cadastro";
@@ -9,8 +9,9 @@ import { AuthProvider, AuthContext } from "../contexts/auth";
 const Router = () => {
   const Private = ({ children }) => {
     const { authenticated, loading } = useContext(AuthContext);
+
     if (loading) {
-      return <div className="loading">carregando...</div>;
+      return <div className="loading">Carregando...</div>;
     }
 
     if (!authenticated) {

@@ -1,4 +1,4 @@
-.container {
+.container-config2{
   width: 100vw;
   height: 100vh;
   padding: 15px;
@@ -8,11 +8,11 @@
   align-items: center;
   background: #f2f2f2;
 }
-.container img {
+.container-config2 img {
   padding: 30px;
   width: 400px;
 }
-.container-login {
+.container-login-config2 {
   width: 30%;
   border-radius: 10px;
   justify-content: center;
@@ -116,7 +116,7 @@ cursor: pointer;
     background-size: cover;
   }
 
-.form-input {
+.form-input2 {
   width: 90%;
   height: 40px;
   padding: 10px 20px;
@@ -131,7 +131,7 @@ cursor: pointer;
   align-items: center;
 }
 
-.form-button {
+.form-button2 {
   margin-top: 20px;
   width: 140px;
   height: 40px;
@@ -148,7 +148,7 @@ cursor: pointer;
   justify-content: center;
 }
 
-.form-button:hover {
+.form-button2:hover {
   background-color: #fff;
   color: #3d5b72;
 }

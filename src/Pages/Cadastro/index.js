@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+// import axios from "axios";
+import { useState, useContext } from "react";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/auth";
 import "../Cadastro/index.css";
 import Logo2 from "../../assets/Logo2-Neki.png";
-import { NavLink } from "react-router-dom";
 
 const Cadastro = () => {
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [confirmaSenha, setConfirmaSenha] = useState("");
+  // const { auth } = useContext(AuthContext);
+  // const { setAuth } = useContext(AuthContext);
+
+  // const baseUrl = "http://107.178.219.190:8080";
 
   const ocultPassword = document.getElementById("password");
   const icon = document.getElementById("icon");
 
-  // const password2 = document.getElementById("password2");
-  // const icon2 = document.getElementById("icon2");
-
-  
   function showHide() {
     if (ocultPassword.type === "password") {
       ocultPassword.setAttribute("type", "text");
@@ -26,41 +30,75 @@ const Cadastro = () => {
     }
   }
 
-  // function showHide2() {
-  //   if (password.type === "password") {
-  //     password.setAttribute("type", "text");
-  //     icon.classList.add("hide");
-  //   } else {
-  //     password.setAttribute("type", "password");
-  //     icon.classList.remove("hide");
+  // const onChangeLoginHandler = (login) => {
+  //   setLogin(login);
+  // };
+
+  // const onChangePasswordHandler = (password) => {
+  //   setPassword(password);
+  // };
+
+  // const onChangePasswordConfirmHandler = (passwordConfirm) => {
+  //   setPasswordConfirm(passwordConfirm);
+  // };
+
+  // const onSubmitFormHandler = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     const response = await axios.post(`${baseUrl}/api/users`, {
+  //       login,
+  //       password,
+  //     });
+  //     if (response.status === 201) {
+  //       alert(` You have created: ${JSON.stringify(response.data)}`);
+  //       setIsLoading(false);
+  //       setLogin("");
+  //       setPassword("");
+  //       setPasswordConfirm("");
+  //       setAuth(true);
+  //       navigate("/home");
+  //     }
+  //     await localStorage.setItem("id", JSON.stringify(response.data));
+  //     const id = await localStorage.getItem("id");
+  //     console.log(id);
+  //   } catch (error) {
+  //     alert("An error has occurred");
+  //     setIsLoading(false);
   //   }
-  // }
+  // };
+
+  // const CriarConta = () => {
+  //   if (
+  //     password === passwordConfirm
+  //       ? onSubmitFormHandler()
+  //       : alert("As senhas não coincidem")
+  //   ) {
+  //   }
+  // };
 
   return (
-    <div className="container">
+    <div className="container-config2">
       <img src={Logo2}></img>
-      <div className="container-login">
+      <div className="container-login-config2">
         <div className="container-title">
           <h1>Cadastro</h1>
         </div>
-        <form className="form">
-          <div className="form-input-container">            
+        <form className="form-config">
+          <div className="form-input-container">
             <input
+              // onChange={onChangeLoginHandler}
               id="email-user"
               type="email"
-              className="form-input"
+              className="form-input2"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
             <div className="section">
               <input
                 id="password"
                 type="password"
-                className={senha !== "" ? "has-val input" : "input"}
-                placeholder="Senha" 
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}               
+                className={password !== "" ? "has-val input" : "input"}
+                placeholder="Senha"
+                // onChange={onChangePasswordHandler}
               />
               <div id="icon" onClick={showHide}></div>
             </div>
@@ -68,16 +106,17 @@ const Cadastro = () => {
               <input
                 id="password"
                 type="password"
-                className={confirmaSenha !== "" ? "has-val input" : "input"}
-                placeholder="Confirma Senha" 
-                value={confirmaSenha}
-                onChange={(e) => setConfirmaSenha(e.target.value)}               
+                className={passwordConfirm !== "" ? "has-val input" : "input"}
+                placeholder="Confirma Senha"
+                // onChange={onChangePasswordConfirmHandler}
               />
               <div id="icon" onClick={showHide}></div>
             </div>
           </div>
           <div className="form-button-config">
-            <button type="submit" className="form-button">
+            <button type="submit" className="form-button2"
+            //  onClick={CriarConta}
+             >
               Cadastrar
             </button>
           </div>
